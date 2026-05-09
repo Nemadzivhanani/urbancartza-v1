@@ -11,7 +11,7 @@ export default function Header() {
           <Menu size={24} strokeWidth={1.5} className="cursor-pointer" />
         </div>
         
-        {/* Left: Desktop Navigation (Hidden on mobile) */}
+        {/* Left: Desktop Navigation */}
         <nav className="hidden w-1/3 lg:flex lg:gap-x-8">
           {['Sneakers', 'Fragrances', 'Tech'].map((item) => (
             <Link key={item} href="#" className="streetwear-label hover:opacity-50 transition-opacity">
@@ -20,14 +20,12 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Center: The New Stacked Logo */}
+        {/* Center: The Stacked Logo */}
         <div className="flex w-1/3 justify-center">
           <Link href="/" className="flex flex-col items-center text-urban-black group">
-            {/* Main Brand */}
             <span className="text-[14px] sm:text-[16px] font-black tracking-[0.15em] leading-none ml-[0.15em] group-hover:opacity-70 transition-opacity">
               URBANCARTZA
             </span>
-            {/* Sub Brand - Smaller text, wider tracking to match width */}
             <span className="text-[7px] sm:text-[8px] font-medium tracking-[0.55em] leading-none mt-1.5 ml-[0.55em] text-gray-500 group-hover:opacity-70 transition-opacity">
               COLLECTIVE
             </span>

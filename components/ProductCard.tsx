@@ -13,14 +13,16 @@ export default function ProductCard({ product }: { product: ProductProps }) {
 
   return (
     <div className="group flex flex-col gap-3 cursor-pointer">
-      {/* Image Container with Hover Effect */}
+      {/* Image Container */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-urban-grey">
-        {/* Placeholder for now - we'll add real images later */}
-        <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs tracking-widest uppercase italic">
-          Image Placeholder
-        </div>
+        <Image 
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
         
-        {/* Badge */}
+        {/* New Badge */}
         {product.isNew && (
           <div className="absolute top-2 left-2 bg-urban-black text-white text-[8px] font-bold px-2 py-1 tracking-widest uppercase z-10">
             New
@@ -37,13 +39,13 @@ export default function ProductCard({ product }: { product: ProductProps }) {
           R {product.price.toLocaleString()}
         </p>
         
-        {/* The Lay-by Selling Point */}
+        {/* Lay-by Pricing */}
         <p className="text-[9px] text-layby-orange font-bold uppercase italic tracking-tighter mt-1">
           Or 3 x Lay-by payments of R {laybyAmount}
         </p>
       </div>
 
-      {/* Action Buttons */}
+      {/* Action Button */}
       <div className="flex flex-col gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button className="w-full py-2.5 text-[9px] font-bold uppercase tracking-widest border border-urban-black text-urban-black hover:bg-urban-black hover:text-white transition-colors">
           Add to Cart
